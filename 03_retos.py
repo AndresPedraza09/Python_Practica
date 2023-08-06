@@ -50,16 +50,33 @@ de Fibonacci empezando en 0.
     0, 1, 1, 2, 3, 5, 8,13 ...
 """
 
-def fibonacci():
-    
-    prev=0
-    next=1
-
-    for i in range(0, 50):
+def fibonacci(n):
+    prev = 0
+    next = 1
+    for _ in range(n):
         print(prev)
-
         fib = prev + next
         prev = next
         next = fib
 
-fibonacci()
+# Llamamos a la función fibonacci y le pasamos el valor 50 para imprimir los primeros 50 números
+fibonacci(50)
+
+
+#Numeros Primos
+
+def is_prime():
+
+    for number in range (1, 101):
+
+        if number >= 2:
+            is_divisible = False
+            for index in range(2, number - 1):
+                if number % index == 0:
+                    is_divisible = True
+                    break
+            
+            if not is_divisible:
+                print(number)
+
+is_prime()
